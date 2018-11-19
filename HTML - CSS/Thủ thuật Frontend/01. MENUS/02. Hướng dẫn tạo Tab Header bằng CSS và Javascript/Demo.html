@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tab Headers</title>
+
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        #html {
+            background-color: #efc9ab;
+        }
+        #css {
+            background-color: #f1b5e2;
+        }
+        #javascript {
+            background-color: #4ebcef;
+        }
+        #php {
+            background-color: #d1f681;
+        }
+
+        .tab-content {
+            color: white;
+            /* display: none; */
+            padding: 50px;
+        }
+        .tab-content h3 {
+            text-align: center;
+        }
+
+        .tab-link {
+            background-color: #555;
+            color: white;
+            border: none;
+            float: left;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+        .tab-link:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <p>Click vào buttons để thấy tiêu đề tab tương ứng</p>
+
+    <div id="html" class="tab-content">
+        <h3>HTML</h3>
+        <p>HTML là chữ viết tắt của HyperText Markup Language, có nghĩa là ngôn ngữ đánh dấu siêu văn bản.</p>
+    </div>
+    <div id="css" class="tab-content">
+        <h3>CSS</h3>
+        <p>CSS là chữ viết tắt của Cascading Style Sheets, nó là một ngôn ngữ được sử dụng để tìm và định dạng lại các phần
+            tử được tạo ra bởi các ngôn ngữ đánh dấu (ví dụ như HTML).</p>
+    </div>
+    <div id="javascript" class="tab-content">
+        <h3>Javascript</h3>
+        <p>Javascript là một ngôn ngữ lập trình kịch bản dựa vào đối tượng phát triển có sẵn hoặc tự định nghĩa ra, javascript
+            được sử dụng rộng rãi trong các ứng dụng Website.</p>
+    </div>
+    <div id="php" class="tab-content">
+        <h3>PHP</h3>
+        <p>PHP là viết tắt của chữ "Hypertext Preprocessor", đây là một ngôn ngữ lập trình được sử dụng để viết ở phía máy chủ
+            (lập trình web).</p>
+    </div>
+
+    <button class="tab-link" onclick="openLanguage('html', this, '#efc9ab')" id="active">HTML</button>
+    <button class="tab-link" onclick="openLanguage('css', this, '#f1b5e2')">CSS</button>
+    <button class="tab-link" onclick="openLanguage('javascript', this, '#4ebcef')">Javascript</button>
+    <button class="tab-link" onclick="openLanguage('php', this, '#d1f681')">PHP</button>
+
+    <script>
+        function openLanguage(languageName, element, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(languageName).style.display = "block";
+            element.style.backgroundColor = color;
+
+        }
+        // Đặt button có class = "active" để hiển thị tự động
+        document.getElementById("active").click();
+    </script>
+</body>
+</html>
