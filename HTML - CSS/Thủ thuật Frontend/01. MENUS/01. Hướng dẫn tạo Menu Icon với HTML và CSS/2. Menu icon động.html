@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Freetuts.net - Menu Icon Động</title>
+
+    <style>
+        #dynamic-container {
+            width: 45px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #bar1, #bar2, #bar3 {
+            height: 5px;
+            background-color: black;
+            margin: 5px;
+            transition: 0.5s;
+        }
+        .change #bar1 {
+            transform: rotate(-45deg) translate(-7px, 6px);
+        }
+
+        .change #bar2 {
+            opacity: 0;
+        }
+
+        .change #bar3 {
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+    </style>
+</head>
+<body>
+    <p>Click vào Menu Icon để thấy sự thay đổi</p>
+
+    <div id="dynamic-container" onclick="toggleClass(this)">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+    </div>
+
+    <script>
+        function toggleClass(element) {
+            element.classList.toggle("change");
+        }
+    </script>
+</body>
+</html>

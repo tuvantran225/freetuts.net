@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS example CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci';
+USE example;
+DROP DATABASE example;
